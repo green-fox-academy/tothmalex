@@ -1,6 +1,18 @@
+    
+body{
+        width: 300px; 
+}
+
 p {
     color: blue;
+    background-color: yellow;
 }
 [class~="b329"]{
     color: blue;
+    font-weight: bold;
+}
+div:nth-of-type(1n) {
+    border: 1px solid green;
+    width: 300px;
+    font-weight: bold;
 }
