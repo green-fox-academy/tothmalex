@@ -1,0 +1,26 @@
+div,article{
+    width: 1100px;
+    height: 300px;
+    margin-top: 20px;
+    font-size: 60px;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+span {
+    background-color: #0CEBDE;
+    width: 300px;
+    line-height: 300px;
+    border-radius:300px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 15px;
+}
+
+div span:first-child{
+                    background-color: #B90CEB;
+}
+
+article span:last-child{
+                         background-color: #EBBE0C;
+}
