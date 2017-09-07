@@ -1,0 +1,33 @@
+main{
+    padding-left: 10px;
+}
+
+h1{
+color:#FF6C47;
+margin-bottom: 0px;
+}
+
+h2{
+    color: #8A2BE2;
+    margin-bottom: 0px;
+    margin-top: 8px;
+}
+
+div{
+    width: 34%;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+ol > li {
+    text-decoration:underline; 
+}
+
+ol li:nth-child(odd){
+    color: #FF78FF;
+}
+
+ol li:nth-child(2){
+    color: #FF78FF;
+}
