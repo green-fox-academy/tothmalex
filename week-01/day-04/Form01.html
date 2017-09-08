@@ -12,8 +12,20 @@
       <form action="">
             <header> Profil</header>
             <section class="leftbox">
-                <div class="leftleft">alex</div>
-                <div class="leftright"></div>
+                <div class="lefttoptop">Személyes adatok</div>
+                <div class="lefttop">
+                <label for="name">Név*</label><br>
+                <input type="text" id="name" name="user_name" required />                      
+                </div>
+                <div class="leftleft">
+                <label for="birthyear">Születési éved</label><br>
+                <input type="text" id="birthyear" name="birth_year" placeholder="pl.1984" />   
+                </div>
+                <div class="leftright">
+                <label for="gender">Nemed</label><br>
+                <input type="radio" name="gender" value="female"> nő
+                <input type="radio" name="gender" value="male"> férfi
+                </div>
                 <div class="leftbottom"></div>
             </section>
             <section class="rightbox"></section>

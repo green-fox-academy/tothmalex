@@ -1,5 +1,5 @@
 body{
-        background-color: #DCD6CD;
+        background-color:#DCD6CD;
 }
 
 form {
@@ -7,7 +7,7 @@ form {
         width: 820px;
         height: 1000px;
         margin: auto;
-        background: rgb(255, 255, 0); 
+        background: #DCD6CD; 
         padding-top: 3%;
         position: relative;
 }
@@ -16,17 +16,20 @@ form {
         box-sizing: border-box;  
         width: 100%;
         height: 10%;
-        background-color:red;
+        background-color:#DCD6CD;
         padding: 3%;
-        text-align: center;
+        text-align: left;
         line-height: 10%;
         vertical-align: middle;
+        color:#938C97;
+        font-size: 30px;
+
 }
   
   section{
         box-sizing: border-box;
         padding: 3%;
-        background-color: blue;
+        background-color:  #DCD6CD;
 }
 
   .leftbox{
@@ -49,25 +52,50 @@ form {
         margin-top: 5%;
         position: absolute;
         bottom: 10%;
+        border: 3px solid black;
 }
 
 .leftleft{
         box-sizing: border-box;
-        border: 3px solid black;
-        background-color: green;
         height: 10%;
         width: 50%; 
-        margin-top: 25%; 
+        margin-top: 5%; 
         float: left; 
         
 }
 
 .leftright{
         box-sizing: border-box;
-        border: 3px solid black;
-        background-color: green;
         height: 10%;
         width: 50%; 
-        margin-top: 25%; 
+        margin-top: 5%; 
         float: right; 
+}
+
+.leftbottom{
+        box-sizing: border-box;
+        border: 3px solid black;
+        background-color: green;
+        height: 40%;
+        width: 100%; 
+        margin-top: 40%; 
+}
+
+.lefttop{
+        box-sizing: border-box;
+        height: 10%;
+        width: 100%; 
+        margin-top: 1%;  
+}
+
+.lefttoptop{
+    box-sizing: border-box;
+    background-color: #938C97;
+    height: 7%;
+    width: 100%; 
+    margin-top: 1%; 
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    vertical-align: middle;
 }
