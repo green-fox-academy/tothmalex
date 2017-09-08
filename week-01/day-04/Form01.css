@@ -49,10 +49,8 @@ form {
 .bottombox{
         width: 100%;
         height: 20%;
-        margin-top: 5%;
         position: absolute;
-        bottom: 10%;
-        border: 3px solid black;
+        bottom: 20%;
 }
 
 .leftleft{
@@ -74,11 +72,10 @@ form {
 
 .leftbottom{
         box-sizing: border-box;
-        border: 3px solid black;
-        background-color: green;
         height: 40%;
         width: 100%; 
         margin-top: 40%; 
+        text-align: justify;
 }
 
 .lefttop{
@@ -98,4 +95,13 @@ form {
     color: white;
     text-align: left;
     vertical-align: middle;
+}
+
+textarea{
+    border-radius: 5px;
+}
+
+input{
+    border-radius: 5px;
+    width: 80%;
 }

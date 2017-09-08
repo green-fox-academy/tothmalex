@@ -14,22 +14,39 @@
             <section class="leftbox">
                 <div class="lefttoptop">Személyes adatok</div>
                 <div class="lefttop">
-                <label for="name">Név*</label><br>
-                <input type="text" id="name" name="user_name" required />                      
+                    <label for="name">Név*</label><br>
+                    <input type="text" id="name" name="user_name" required />                      
                 </div>
                 <div class="leftleft">
-                <label for="birthyear">Születési éved</label><br>
-                <input type="text" id="birthyear" name="birth_year" placeholder="pl.1984" />   
+                    <label for="birthyear">Születési éved</label><br>
+                    <input type="text" id="birthyear" name="birth_year" placeholder="pl.1984" />   
                 </div>
                 <div class="leftright">
-                <label for="gender">Nemed</label><br>
-                <input type="radio" name="gender" value="female"> nő
-                <input type="radio" name="gender" value="male"> férfi
+                    <label for="gender">Nemed</label><br>
+                    <input type="radio" name="gender" value="female"> nő
+                    <input type="radio" name="gender" value="male"> férfi
                 </div>
-                <div class="leftbottom"></div>
+                <div class="leftbottom">
+                    <label for="brand">Milyen márkákat szeretsz?</label><br>
+                    <input type="radio" name="brand" value="female"> Adidas
+                    <input type="radio" name="brand" value="male"> Apple <br>
+                    <input type="radio" name="brand" value="female"> Coca-Cola
+                    <input type="radio" name="brand" value="male"> Mazda<br>
+                    <input type="radio" name="brand" value="female"> Nike
+                    <input type="radio" name="brand" value="male"> Opel<br>
+                    <input type="radio" name="brand" value="female"> Ray-Ban
+                    <input type="radio" name="brand" value="male"> Starbucks<br>
+                    <input type="radio" name="brand" value="female"> Tesla
+                    <input type="radio" name="brand" value="male"> Yahoo
+                </div>
             </section>
             <section class="rightbox"></section>
-            <section class="bottombox"></section>
+            <section class="bottombox">
+                <div>
+                    <label for="msg">Bemutatkozás*</label><br>
+                    <textarea id="msg" rows="10" cols="100%" name="user_message" placeholder="Írj magadról pár mondatot!"></textarea>
+                </div>
+            </section>
        </form> 
      </body>
     </html>
