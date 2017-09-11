@@ -66,32 +66,45 @@ public class VariableMutation {
         int divisor=11;
         boolean isDivisor;
 
-        if (h/divisor==0)
+        if (h%divisor==0)
             isDivisor=true;
         else
             isDivisor=false;
-        System.out.println("The double of g2 is larger than g1: "+ isLarger);
+        System.out.println(divisor + " is divisor of "+h+ " : " + isDivisor);
         // tell if it has 11 as a divisor (print as a boolean)
 
 
 
         int i1 = 10;
         int i2 = 3;
-        // tell if i1 is higher than i2 squared and smaller than i2 cubed (print as a boolean)
+        int squarei2=i2*i2;
+        int cubei2=i2*(i2*=i2);
+        boolean isTrue;
 
-
+        if (cubei2>i1 && i1>squarei2)
+            isTrue=true;
+        else
+            isTrue=false;
+        System.out.println("i1 is higher than i2 squared and smaller than i2 cubed " + isTrue);
+        // tell if i1 is higher than i2 squared and smaller than i2 cubed (print as a boolean
 
 
         int j = 1521;
+        boolean isDiv;
+
+        if (j%3==0 || j%5==0)
+            isDiv=true;
+        else
+            isDiv=false;
+        System.out.println("J is dividable by 3 or 5: " + isTrue);
         // tell if j is dividable by 3 or 5 (print as a boolean)
 
 
 
-
         String k = "Apple";
-        //fill the k variable with its cotnent 4 times
 
-
+        k="Apple "+"Apple "+"Apple "+"Apple ";
         System.out.println(k);
+        //fill the k variable with its content 4 times
     }
 }
