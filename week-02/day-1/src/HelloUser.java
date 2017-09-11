@@ -5,6 +5,6 @@ public class HelloUser {
     Scanner sc = new Scanner(System.in);
 
     String userName = sc.nextLine();
-    System.out.println(userName);
+    System.out.println("Hello, "+userName+"!");
     }
 }
