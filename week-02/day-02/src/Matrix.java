@@ -15,8 +15,8 @@ public class Matrix {
                     }
                     else
                     {
-                        a[i][j]=0;
-                        System.out.print(" "+a[i][j]);
+                    a[i][j]=0;
+                    System.out.print(" "+a[i][j]);
                     }
                 }
                 System.out.print("\n");
