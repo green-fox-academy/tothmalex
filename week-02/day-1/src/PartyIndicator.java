@@ -2,12 +2,14 @@ import java.util.Scanner;
 
 public class PartyIndicator {
     public static void main(String[] args) {
+
         int numberGirl;
+        int numberBoy;
+
         Scanner keyboard = new Scanner(System.in);
         System.out.print("How many girls are coming?:\n ");
         numberGirl = keyboard.nextInt();
 
-        int numberBoy;
         Scanner keyboard2 = new Scanner(System.in);
         System.out.print("How many boys are coming?:\n ");
         numberBoy = keyboard2.nextInt();
