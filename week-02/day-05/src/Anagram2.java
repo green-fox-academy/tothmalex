@@ -1,38 +1,32 @@
-/*import java.util.Scanner;
+import java.util.Scanner;
 
 public class Anagram2 {
 
     public static void main(String[] args) {
 
-        String s;
-        String t;
+        String wordFirst;
+        String wordSecond;
 
         Scanner keyboard = new Scanner(System.in);
-        System.out.print("Enter the first number:\n ");
-        s = keyboard.nextLine();
+        System.out.print("Enter the first word:\n ");
+        wordFirst= keyboard.nextLine();
 
-        Scanner keyboard2 = new Scanner(System.in);
-        System.out.print("Enter the second number:\n ");
-        t = keyboard2.nextLine();
+        System.out.print("Enter the second word:\n ");
+        wordSecond = keyboard.nextLine();
 
-        boolean anagram;
+        System.out.println(anagramCheck(wordFirst, wordSecond));
     }
+        public static boolean anagramCheck(String input1,String input2) {
 
-        public boolean anagram(String s, String t) {
-
-            if (s.length() != t.length())
+            if (input1.length() != input2.length()) {
                 return false;
-
-            int value = 0;
-            for (int i = 0; i < s.length(); i++) {
-                value += ((int) s.charAt(i)) ^ 2;
-                value -= ((int) t.charAt(i)) ^ 2;
+            } else { int value = 0;
+            for (int i = 0; i < input1.length(); i++) {
+                value += ((int) input1.charAt(i)) ^ 2;
+                value -= ((int) input2.charAt(i)) ^ 2;
             }
             return value == 0;
-
-            System.out.println(anagram);
         }
 
     }
 }
-*/
