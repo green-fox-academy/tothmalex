@@ -10,7 +10,7 @@ public class PrintBigger {
         System.out.print("Enter the two numbers:\n ");
 
         numberFirst = keyboard.nextInt();
-        numberSecond = keyboard.nextInt();3
+        numberSecond = keyboard.nextInt();
 
         if (numberFirst>numberSecond) {
             System.out.println(numberFirst);
