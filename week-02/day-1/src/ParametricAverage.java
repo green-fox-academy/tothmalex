@@ -22,4 +22,4 @@ public class ParametricAverage {
         avg = sum / count;
         System.out.println("Sum: " + sum + ", Average: " + avg);
     }
-}   
+}
