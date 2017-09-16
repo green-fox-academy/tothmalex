@@ -1,35 +1,34 @@
 import java.util.Scanner;
-import java.util.Random;
+import java.util.Scanner;
 
-public class GuessTheNumber {
+public class GuessMyNumber {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the minimum value of the range: ");
+        int minRange = scanner.nextInt();
+        System.out.println("Please enter the maximum value of the range: ");
+        int maxRange = scanner.nextInt();
+        int random = (minRange + 1) + (int) (Math.random() * (maxRange - 1));
+        int guess = random;
+        int lives = 5;
+        boolean win = false;
 
-        int guess;
-        int initialNumber;
-        int lastNumber;
-
-        Scanner keyboard = new Scanner(System.in);
-        System.out.print("Enter the inital number of the range:\n ");
-        initialNumber = keyboard.nextInt();
-        System.out.print("Enter the last number of the range:\n ");
-        lastNumber = keyboard.nextInt();
-
-        Random rand = new Random();
-        int number = rand.nextInt(lastNumber) + initialNumber;
-
-        while (true) {
-            System.out.println("Please enter a number between " + initialNumber + " and " + lastNumber + ":");
-            guess = keyboard.nextInt();
-            if (guess > initialNumber && guess < lastNumber) {
-                if (guess == number) {
-                    System.out.println("Congratulations, you found the number: " + number);
-                    break;
-                } else if (guess > number) {
-                    System.out.println("The stored number is lower.");
-                } else { System.out.println("The stored number is higher.");
-                }
-            } else { System.out.println("The guessed number must be between " + initialNumber + " and " + lastNumber + "!");
+        while (win == false) {
+            System.out.println("Please enter your guess: ");
+            guess = scanner.nextInt();
+            lives--;
+            if (lives == 0) {
+                System.out.println("No more lives left! Sorry, you lost, you NOOB!");
+                break;
+            }
+            if (guess == random) {
+                win = true;
+                System.out.println("Congrats! You are awesome!");
+            } else if (guess < random) {
+                System.out.println("Too low! Try a bit bigger!" + "You have " + lives + " lives left!");
+            } else if (guess > random) {
+                System.out.println("Too high! Try a bit lower!" + "You have " + lives + " lives left!");
             }
         }
     }
