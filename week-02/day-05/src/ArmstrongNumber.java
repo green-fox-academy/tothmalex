@@ -1,32 +1,35 @@
 import java.util.Scanner;
 
+import java.util.Scanner;
+
 public class ArmstrongNumber {
 
     public static void main(String[] args) {
+        //  Write a simple program to check if a given number is an armstrong number.
+        //  The program should ask for a number. E.g. if we type 371, the program should
+        //  print out: The 371 is an Armstrong number.
 
-        int numberIn;
-        int sum = 0;
-        int a;
+        Scanner numberInput = new Scanner(System.in);
+        System.out.println("Please enter a number:");
+        int armCheck = numberInput.nextInt();
 
-        Scanner keyboard = new Scanner(System.in);
-        System.out.print("Enter the number:\n ");
-        numberIn = keyboard.nextInt();
+        System.out.println(isArmstrong(armCheck));
+    }
 
-        int length = (int) (Math.log10(numberIn) + 1);
+    private static String isArmstrong(int armCheck) {
+        int innerTemp = 0;
+        String innerNumber = Integer.toString(armCheck);
+        int innerPower = innerNumber.length();
 
-        System.out.println(length);
-
-        while (numberIn > 0) {
-            a = numberIn % 10;
-            numberIn = numberIn / 10;
-            sum += sum + Math.pow(a, (int) Math.log10(numberIn) + 1);
+        for (int i = 0; i < (innerNumber.length()); i++) {
+            int innerChar = Integer.parseInt(innerNumber.substring(i, i + 1));
+            innerTemp += (int) (Math.pow(innerChar, innerPower));
         }
-        System.out.println("Sum of Digits :" + sum);
-
-        if (numberIn == sum) {
-            System.out.println("The " + numberIn + " is an Armstrong number.");
-        } else {
-            System.out.println("The " + numberIn + " is NOT an Armstrong number.");
+        if (innerTemp == armCheck) {
+            return "The " + armCheck + " is an Armstrong number.";
+        }
+        else {
+            return "The " + armCheck + " is NOT an Armstrong number";
         }
     }
 }
