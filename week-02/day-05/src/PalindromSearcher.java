@@ -15,7 +15,7 @@ public class PalindromeSearch {
     }
 
     public static ArrayList searchPalindrome(String inputString) {
-        
+
         ArrayList<String> inputArray = new ArrayList();
         ArrayList<String> outputArray = new ArrayList<>();
 
