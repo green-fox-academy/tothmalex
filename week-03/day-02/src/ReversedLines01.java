@@ -4,7 +4,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class ReversedLines01s {
+public class ReversedLines01 {
 
     public static void main(String[] args) {
         decrypt("src/reversed-lines.txt");
