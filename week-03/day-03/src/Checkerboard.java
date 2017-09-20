@@ -6,10 +6,25 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Checkerboard {
 
-    public static void mainDraw(Graphics graphics){
-      // fill the canvas with a checkerboard pattern.
+    public static void mainDraw(Graphics graphics) {
 
+        int x = 0;
+        int y = 0;
+        int size = 20;
+        for (int i = 0; i < (HEIGHT / size); i++) {
+            if (i % 2 == 1) {
+                x = 20;
+            } else x = 0;
+            for (int j = 0; j < (WIDTH / size/ 2 ); j++) {
+                graphics.setColor(Color.BLACK);
+                graphics.fillRect(x, y, size, size);
+                x += size * 2;
+            }
+            y += size;
+        }
     }
+
+    // fill the canvas with a checkerboard pattern.
 
 //    Don't touch the code below
     static int WIDTH = 320;
