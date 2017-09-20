@@ -7,11 +7,17 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class ColoredBox {
 
     public static void mainDraw(Graphics graphics){
-      // draw a box that has different colored lines on each edge.
 
-
-
+        graphics.setColor(Color.RED);
+        graphics.drawLine(20, 50, 200, 50);
+        graphics.setColor(Color.GREEN);
+        graphics.drawLine(20, 50, 20, 100);
+        graphics.setColor(Color.BLUE);
+        graphics.drawLine(20, 100, 200, 100);
+        graphics.setColor(Color.BLACK);
+        graphics.drawLine(200, 50, 200, 100);
     }
+    // draw a box that has different colored lines on each edge.
 
 //    Don't touch the code below
     static int WIDTH = 320;
