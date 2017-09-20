@@ -7,12 +7,23 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class PurpleSteps {
 
     public static void mainDraw(Graphics graphics){
-      // reproduce this:
-      // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
 
+        int size = 15;
+        int x = 0;
+        int y = 0;
 
+        for (int i = 0; i <19 ; i++) {
 
+            graphics.setColor(new Color(177,70,244));
+            graphics.fillRect(x, y, size, size);
+            graphics.setColor(Color.BLACK);
+            graphics.drawRect(x, y, size, size);
+            x+=size;
+            y+=size;
+        }
     }
+    // reproduce this:
+    // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
 
 //    Don't touch the code below
     static int WIDTH = 320;
