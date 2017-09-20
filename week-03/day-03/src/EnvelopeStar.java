@@ -7,13 +7,53 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class EnvelopeStar {
 
     public static void mainDraw(Graphics graphics){
-      // reproduce this:
-      // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/envelope-star/r2.png]
 
+        int x1 = WIDTH / 2;
+        int y1 = 0;
+        int x2 = WIDTH / 2;
+        int y2 = HEIGHT / 2;
+        for (int i = 0; i < HEIGHT / 2 /10; i++) {
+            graphics.setColor(Color.GREEN);
+            graphics.drawLine(x1, y1, x2, y2);
+            y1 += 10;
+            x2 -= 10;
+        }
 
+        x1 = WIDTH / 2;
+        y1 = 0;
+        x2 = WIDTH / 2;
+        y2 = HEIGHT / 2;
+        for (int i = 0; i < HEIGHT / 2 /10; i++) {
+            graphics.setColor(Color.GREEN);
+            graphics.drawLine(x1, y1, x2, y2);
+            y1 += 10;
+            x2 += 10;
+        }
 
+        x1 = WIDTH / 2;
+        y1 = HEIGHT;
+        x2 = WIDTH / 2;
+        y2 = HEIGHT / 2;
+        for (int i = 0; i < HEIGHT / 2 /10; i++) {
+            graphics.setColor(Color.GREEN);
+            graphics.drawLine(x1, y1, x2, y2);
+            y1 -= 10;
+            x2 -= 10;
+        }
 
+        x1 = WIDTH / 2;
+        y1 = HEIGHT;
+        x2 = WIDTH / 2;
+        y2 = HEIGHT / 2;
+        for (int i = 0; i < HEIGHT / 2 /10; i++) {
+            graphics.setColor(Color.GREEN);
+            graphics.drawLine(x1, y1, x2, y2);
+            y1 -= 10;
+            x2 += 10;
+        }
     }
+    // reproduce this:
+    // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/envelope-star/r2.png]
 
 //    Don't touch the code below
     static int WIDTH = 320;
