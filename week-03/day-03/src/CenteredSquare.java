@@ -7,11 +7,13 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class CenteredSquare {
 
     public static void mainDraw(Graphics graphics){
-      // draw a green 10x10 square to the canvas' center.
 
-
-
+        int x = (WIDTH-10)/2;
+        int y = (HEIGHT-10)/2;
+        graphics.setColor(Color.GREEN);
+        graphics.drawRect(x,y,10,10);
     }
+    // draw a green 10x10 square to the canvas' center.
 
 //    Don't touch the code below
     static int WIDTH = 320;
