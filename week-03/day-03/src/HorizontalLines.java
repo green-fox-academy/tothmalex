@@ -7,14 +7,21 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class HorizontalLines {
 
     public static void mainDraw(Graphics graphics){
-      // create a line drawing function that takes 2 parameters:
-      // the x and y coordinates of the line's starting point
-      // and draws a 50 long horizontal line from that point.
-      // draw 3 lines with that function.
 
+        drawing(graphics, 50,100);
+        drawing(graphics, 50,105);
+        drawing(graphics, 50,110);
+    }
+    public static void drawing(Graphics graphics, int x, int y){
 
+        graphics.setColor(Color.BLUE);
+        graphics.drawLine(x,y, x+50, y);
 
     }
+    // create a line drawing function that takes 2 parameters:
+    // the x and y coordinates of the line's starting point
+    // and draws a 50 long horizontal line from that point.
+    // draw 3 lines with that function.
 
 //    Don't touch the code below
     static int WIDTH = 320;
