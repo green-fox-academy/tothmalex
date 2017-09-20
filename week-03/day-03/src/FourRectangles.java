@@ -7,13 +7,27 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class FourRectangles {
 
     public static void mainDraw(Graphics graphics){
-      // draw four different size and color rectangles.
 
-
-
+        drawing(graphics, 50,100, 50,50);
+        drawing(graphics, 25,105, 50,50);
+        drawing(graphics, 75,110, 50,50);
+        drawing(graphics, 105,115, 50,50);
     }
+    public static void drawing(Graphics graphics, int x, int y, int width, int height) {
 
-//    Don't touch the code below
+        graphics.setColor(Color.RED);
+        graphics.fillRect(x, y, width, height);
+        graphics.setColor(Color.GREEN);
+        graphics.fillRect(x, y, width, height);
+        graphics.setColor(Color.BLUE);
+        graphics.fillRect(x, y, width, height);
+        graphics.setColor(Color.BLACK);
+        graphics.fillRect(x, y, width, height);
+    }
+    // draw four different size and color rectangles.
+
+
+    //    Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 343;
     public static void main(String[] args) {
