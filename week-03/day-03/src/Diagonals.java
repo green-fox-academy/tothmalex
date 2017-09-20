@@ -7,11 +7,14 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Diagonals {
 
     public static void mainDraw(Graphics graphics){
-      // draw the canvas' diagonals in green.
 
-
+        graphics.setColor(Color.RED);
+        graphics.drawLine(0, 0, 320, 343);
+        graphics.setColor(Color.BLUE);
+        graphics.drawLine(320, 0, 0, 343);
 
     }
+    // draw the canvas' diagonals in green.
 
 //    Don't touch the code below
     static int WIDTH = 320;
