@@ -16,7 +16,6 @@ public class HorizontalLines {
 
         graphics.setColor(Color.BLUE);
         graphics.drawLine(x,y, x+50, y);
-
     }
     // create a line drawing function that takes 2 parameters:
     // the x and y coordinates of the line's starting point
