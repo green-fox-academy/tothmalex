@@ -6,15 +6,22 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class GoToCenter {
 
-    public static void mainDraw(Graphics graphics){
-      // create a line drawing function that takes 2 parameters:
-      // the x and y coordinates of the line's starting point
-      // and draws a line from that point to the center of the canvas.
-      // draw 3 lines with that function.
+    public static void mainDraw(Graphics graphics) {
 
+        drawing(graphics, 50,100);
+        drawing(graphics, 50,105);
+        drawing(graphics, 50,110);
+    }
+        public static void drawing(Graphics graphics, int x, int y){
 
+            graphics.setColor(Color.RED);
+            graphics.drawLine(x,y, WIDTH/2, HEIGHT/2);
 
     }
+    // create a line drawing function that takes 2 parameters:
+    // the x and y coordinates of the line's starting point
+    // and draws a line from that point to the center of the canvas.
+    // draw 3 lines with that function.
 
 //    Don't touch the code below
     static int WIDTH = 320;
