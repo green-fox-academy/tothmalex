@@ -6,45 +6,34 @@ public class Exe11 {
 
     public static void mainDraw(Graphics graphics) {
 
-        int x = 0;
-        int y = 0;
-        int w = WIDTH;
-        int h = HEIGHT;
 
         graphics.setColor(Color.YELLOW);
-        graphics.fillRect(x, y, w, h);
-        graphics.setColor(Color.BLACK);
-        graphics.drawRect(x, y, w, h);
+        graphics.fillRect(0, 0, WIDTH, HEIGHT);
+        graphics.drawRect(0, 0, WIDTH, HEIGHT);
 
-        drawSquare(graphics, x, y, w, h);
+        drawSquare(graphics, 0, 0, HEIGHT, 5);
     }
 
-    public static int drawSquare(Graphics g, int x, int y, int w, int h) {
+    static int drawSquare(Graphics g, int x, int y, int size, int n) {
 
         g.setColor(Color.BLACK);
-        g.drawRect(x + w / 3, y, w / 3, h / 3);
-        g.drawRect(x + w / 3 * 2, y + h / 3, w / 3, h / 3);
-        g.drawRect(x + w / 3, y + w / 3 * 2, w / 3, h / 3);
-        g.drawRect(x, y + h / 3, w / 3, h / 3);
 
-        if (w == 0) {
+        g.drawRect(x + size / 3, y, size / 3, size / 3);
+        g.drawRect(x + size / 3 * 2, y + size / 3, size / 3, size / 3);
+        g.drawRect(x + size / 3, y + size / 3 * 2, size / 3, size / 3);
+        g.drawRect(x, y + size / 3, size / 3, size / 3);
+
+        if (n == 0) {
             return 0;
         } else {
-            return drawSquare(g, x + w / 3, y + h / 3, w / 3, h / 3);
-        }
+            drawSquare(g, x + size / 3, y, size / 3, n - 1);
+            drawSquare(g, x + size / 3 * 2, y + size / 3, size / 3, n - 1);
+            drawSquare(g, x + size / 3, y + size / 3 * 2, size / 3, n - 1);
+            drawSquare(g, x, y + size / 3, size / 3, n - 1);
+        } return 0;
+    }
 
-       /* float radius = (float)(6 * Math.sqrt(i));
-        int x = (int)(radius * Math.cos(angle)) + i;
-        int y = (int)(radius * Math.sin(angle)) + i;
-        g.setColor(Color.getHSBColor((float)i / n,1,1));
-        g.fillOval(x, y, (int)radius % w, (int)radius % w);
-        if (i < n) {
-            drawSquare(g, cx, cy, w, i + 1, n);
-        } */
-
-        }
-
-
+    
     //    Don't touch the code below
     static int WIDTH = 660;
     static int HEIGHT = 660;
