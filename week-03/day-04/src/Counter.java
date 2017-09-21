@@ -14,7 +14,6 @@ public class Counter {
         }
         return count;
         }
-
     public static int countingRecursion(int n) {
         if (n == 1) {
             return 1;

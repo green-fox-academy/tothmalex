@@ -2,16 +2,15 @@ public class SumDigit {
 
     public static void main(String[] args) {
 
-        int n= 15;
+        int n= 7;
 
 
         System.out.println(countingRecursion(n));
     }
-
     public static int countingRecursion(int n) {
 
-        if (n == 1) {
-            return 1;
+        if (n < 10) {
+            return n;
         } else {
             return n%10 + countingRecursion(n/10);
         }

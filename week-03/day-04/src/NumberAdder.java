@@ -6,7 +6,6 @@ public class NumberAdder {
 
         System.out.println(countingRecursion(n));
     }
-
     public static int countingRecursion(int n) {
         if (n == 1) {
             return 1;
