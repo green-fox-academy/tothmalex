@@ -2,7 +2,7 @@ public class Bunny1 {
 
     public static void main(String[] args) {
 
-        int n = 12;
+        int n = 1;
         int ears = 2;
 
         System.out.println(earsRecursion(ears,n));
