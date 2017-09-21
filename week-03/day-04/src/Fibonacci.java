@@ -1,3 +1,23 @@
+public class Fibonacci {
+
+    public static void main(String[] args) {
+
+        int n = 6;
+
+        System.out.println(fib(n));
+    }
+    public static int fib(int n) {
+
+        if (n <= 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        } else {
+            return fib(n-1) + fib (n-2);
+        }
+    }
+}
+
 // The fibonacci sequence is a famous bit of mathematics, and it happens to
 // have a recursive definition. The first two values in the sequence are
 // 0 and 1 (essentially 2 base cases). Each subsequent value is the sum of the
