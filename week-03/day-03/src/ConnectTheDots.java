@@ -36,7 +36,7 @@ public class ConnectTheDots {
         graphics.drawLine(x1, y1, x4, y4);
 
     }
-    
+
 // create a function that takes 1 parameter:
     // an array of {x, y} points
     // and connects them with green lines.
