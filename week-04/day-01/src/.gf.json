@@ -1,0 +1,11 @@
+{
+  "exercises": {
+    "Fleet.java": "",
+    "FleetOfThings.java": "",
+    "Thing.java": ""
+  },
+  "lang": "java",
+  "repo": "teaching-materials",
+  "workshop-path": "workshop/oo/fleet-of-things",
+  "workshop-url": "https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/oo/fleet-of-things/java"
+}
