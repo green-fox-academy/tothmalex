@@ -11,14 +11,10 @@ public class Animal {
     int hungerValue;
     int thirstValue;
 
-    public Animal() {
-        this("unknown",50,50);
-    }
-
     public Animal(String name, int hungerValue, int thirstValue) {
         this.name = name;
-        this.hungerValue = hungerValue;
-        this.thirstValue = thirstValue;
+        this.hungerValue = 50;
+        this.thirstValue = 50;
     }
 
     public void canEat(){
@@ -34,4 +30,9 @@ public class Animal {
         this.thirstValue += 1;
     }
 
+
+    public static void main(String[] args) {
+        Animal animal1 = new Animal("Alex", 50, 50);
+        Animal animal2 = new Animal("Dog",50,50);
+    }
 }
