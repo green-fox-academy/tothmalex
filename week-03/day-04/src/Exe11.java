@@ -33,7 +33,6 @@ public class Exe11 {
         } return 0;
     }
 
-    
     //    Don't touch the code below
     static int WIDTH = 660;
     static int HEIGHT = 660;
