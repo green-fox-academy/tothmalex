@@ -6,13 +6,11 @@ public class Dominoes {
         List<Domino> dominoes = initializeDominoes();
 
         for (int i = 0; i < dominoes.size() - 1; i++) {
-            for (int j = 0; j < dominoes.size(); j++) {
+            for (int j = i + 1; j < dominoes.size(); j++) {
                 if (dominoes.get(i).getValues()[1] == dominoes.get(j).getValues()[0]) {
                     Domino temp = dominoes.get(i + 1);
                     dominoes.set(i + 1, dominoes.get(j));
                     dominoes.set(j, temp);
-                    i++;
-                    j = i + 1;
                 }
             }
         }
