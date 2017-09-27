@@ -2,14 +2,6 @@ import java.util.Arrays;
 
 public class Anagram {
 
-    /*String wordOne;
-    String wordTwo;
-
-    public Anagram(String wordOne, String wordTwo) {
-        this.wordOne = "alma";
-        this.wordTwo = "lama";
-    }*/
-
     public boolean ifAnagram (String wordOne, String wordTwo) {
         char[] word1 = wordOne.replaceAll("[\\s]", "").toCharArray();
         char[] word2 = wordTwo.replaceAll("[\\s]", "").toCharArray();
