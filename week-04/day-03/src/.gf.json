@@ -1,0 +1,10 @@
+{
+  "exercises": {
+    "Extension.java": "",
+    "ExtensionTest.java": ""
+  },
+  "lang": "java",
+  "repo": "teaching-materials",
+  "workshop-path": "workshop/testing/extension",
+  "workshop-url": "https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/testing/extension/java"
+}
