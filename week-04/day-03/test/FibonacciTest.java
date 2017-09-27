@@ -4,15 +4,14 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class CountLettersTest {
-
-    CountLetters map2;
-    String input;
+public class FibonacciTest {
+    Fibonacci number;
+    Integer n;
 
     @Before
     public void setUp() throws Exception {
-        input = "allateledel";
-        map2 = new CountLetters();
+        number = new Fibonacci();
+        n = 6;
     }
 
     @After
@@ -20,7 +19,8 @@ public class CountLettersTest {
     }
 
     @Test
-    public void mapping() throws Exception {
-        assertEquals(5, (int) map2.mapping(input));
+    public void fib() throws Exception {
+        assertEquals(8,number.fib(n));
     }
+
 }
