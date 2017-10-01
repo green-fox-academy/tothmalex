@@ -20,6 +20,4 @@ public class Sharpie {
     public void use(){
         this.inkAmount -= 1;
     }
-
-
 }
