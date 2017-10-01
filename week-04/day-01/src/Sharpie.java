@@ -1,23 +1,65 @@
-public class Sharpie {
-   /* Create Sharpie class
-    We should know about each sharpie their color (which should be a string), width (which will be a floating point number),
-     inkAmount (another floating point number)
-    When creating one, we need to specify the color and the width
-    Every sharpie is created with a default 100 as inkAmount
-    We can use() the sharpie objects
-    which decreases inkAmount*/
+import java.util.ArrayList;
+import java.util.List;
 
+public class Sharpie {
     String color;
     float width;
-    float inkAmount;
+    float inkAmount = 100;
 
-    public Sharpie( String color, float width) {
+    public Sharpie(String color, float width){
         this.color = color;
         this.width = width;
-        this.inkAmount = 100;
     }
 
     public void use(){
-        this.inkAmount -= 1;
+        inkAmount -= 5;
+    }
+}
+
+class SharpieSet {
+
+    List<Sharpie> sharpies = new ArrayList<>();
+
+    public SharpieSet (){
+    }
+
+    int countUsable() {
+        int count = 0;
+        for (int i = 0; i < sharpies.size(); i++) {
+            if (sharpies.get(i).inkAmount > 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    void removeTrash() {
+        for (int i = 0; i < sharpies.size(); i++) {
+            if (sharpies.get(i).inkAmount == 0) {
+                sharpies.remove(i);
+            }
+        }
+    }
+
+    void add (Sharpie sharpie) {
+        sharpies.add(sharpie);
+    }
+
+
+}
+
+class Main3 {
+    public static void main(String[] args) {
+        Sharpie redBig = new Sharpie("red", (float) 43.6);
+        redBig.use();
+        System.out.println(redBig.inkAmount);
+        System.out.println(redBig.color);
+
+        SharpieSet sharpiesList = new SharpieSet();
+        sharpiesList.add(redBig);
+
+        System.out.println(sharpiesList.countUsable());
+
+
     }
 }
