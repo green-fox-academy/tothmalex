@@ -8,16 +8,18 @@ import java.io.IOException;
 
         BufferedImage image;
         int posX, posY;
+        int size;
+
 
         public PositionedImage(String filename, int posX, int posY) {
             this.posX = posX;
             this.posY = posY;
+            size = 75;
             try {
                 image = ImageIO.read(new File(filename));
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
 
         public void draw(Graphics graphics) {

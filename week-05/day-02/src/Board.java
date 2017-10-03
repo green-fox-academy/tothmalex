@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.text.Position;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -7,12 +8,21 @@ import java.awt.event.KeyListener;
 
         int testBoxX;
         int testBoxY;
+        int size;
+        String direction;
+        int [][] floorPos;
+        int [][] wallPos;
+
 
         public Board() {
-            testBoxX = 300;
-            testBoxY = 300;
 
-            // set the size of your draw board
+            testBoxX = 0;
+            testBoxY = 0;
+            size = 72;
+            direction = "down";
+            floorPos = new int[11][10];
+            wallPos = {{1, 2}, {3, 4}, {4,5}, {5, 4}};
+
             setPreferredSize(new Dimension(720, 792));
             setVisible(true);
         }
@@ -20,166 +30,48 @@ import java.awt.event.KeyListener;
         @Override
         public void paint(Graphics graphics) {
             super.paint(graphics);
-            graphics.fillRect(testBoxX, testBoxY, 72, 72);
-            // here you have a 720x720 canvas
-            // you can create and draw an image using the class below e.g.
 
             int x = 0;
             int y = 0;
-            for (int i = 0; i < 11; i++) {
-                for (int j = 0; j < 10; j++) {
-                    PositionedImage image = new PositionedImage("src/floor.png", x, y);
-                    image.draw(graphics);
-                    x += 72;
+            for (int i = 0; i < floorPos.length + 1; i++) {
+                for (int j = 0; j < floorPos[1].length + 1; j++) {
+                    drawingFloor(graphics, "src/floor.png", x, y);
+                    x += size;
                 }
                 x = 0;
-                y += 72;
+                y += size;
             }
 
-            x = 72;
-            y = 144;
-            for (int i = 2; i < 3; i++) {
-                for (int j = 1; j < 4; j++) {
-                    PositionedImage image = new PositionedImage("src/wall.png", x, y);
-                    image.draw(graphics);
-                    x += 72;
+           /* for (int i = 0; i < floorPos[i].length; i++) {
+                for (int j = 0; j < floorPos[j].length; j++) {
+                    drawingFloor(graphics, "src/floor.png", floorPos[i][0] * size, floorPos[i][1] * size);
+                }
+            }*/
+
+            for (int i = 0; i < wallPos[i].length; i++) {
+                for (int j = 0; j < wallPos[j].length; j++) {
+                    drawingWall(graphics, "src/wall.png", wallPos[i][0] * size, wallPos[i][1] * size);
                 }
             }
 
-            x = 216;
-            y = 0;
-            for (int i = 0; i < 3; i++) {
-                for (int j = 3; j < 4; j++) {
-                    PositionedImage image = new PositionedImage("src/wall.png", x, y);
-                    image.draw(graphics);
-                    y += 72;
-                }
-            }
-// ........................
-            x = 72 * 5;
-            y = 72 * 4;
-            for (int i = 5; i < 6; i++) {
-                for (int j = 6; j < 10; j++) {
-                    PositionedImage image = new PositionedImage("src/wall.png", x, y);
-                    image.draw(graphics);
-                    x += 72;
-                }
+                PositionedImage image = new PositionedImage("src/hero-" + direction + ".png", testBoxX, testBoxY);
+                image.draw(graphics);
             }
 
-            x = 72 * 5;
-            y = 0;
-            for (int i = 0; i < 4; i++) {
-                for (int j = 5; j < 6; j++) {
-                    PositionedImage image = new PositionedImage("src/wall.png", x, y);
-                    image.draw(graphics);
-                    y += 72;
-                }
+
+
+            public void drawingFloor (Graphics graphics, String filename, int x, int y) {
+                PositionedImage image = new PositionedImage(filename, x, y);
+                image.draw(graphics);
             }
 
-            x = 72 * 8;
-            y = 72 * 5;
-            for (int i = 5; i < 9; i++) {
-                for (int j = 9; j < 10; j++) {
-                    PositionedImage image = new PositionedImage("src/wall.png", x, y);
-                    image.draw(graphics);
-                    y += 72;
-                }
+            public void drawingWall (Graphics graphics, String filename, int x, int y) {
+                PositionedImage image = new PositionedImage(filename, x, y);
+                image.draw(graphics);
             }
 
-            //------------------- creating the blocks
-            x = 72 * 7;
-            y = 72;
-            for (int i = 1; i < 3; i++) {
-                for (int j = 7; j < 9; j++) {
-                    PositionedImage image = new PositionedImage("src/wall.png", x, y);
-                    image.draw(graphics);
-                    x += 72;
-                }
-                x = 72 * 7;
-                y += 72;
-            }
 
-            x = 72 * 5;
-            y = 72 * 6;
-            for (int i = 5; i < 7; i++) {
-                for (int j = 6; j < 8; j++) {
-                    PositionedImage image = new PositionedImage("src/wall.png", x, y);
-                    image.draw(graphics);
-                    x += 72;
-                }
-                x = 72 * 5;
-                y += 72;
-            }
 
-            //....................
-            x = 0;
-            y = 72 * 4;
-            for (int i = 4; i < 5; i++) {
-                for (int j = 0; j < 4; j++) {
-                    PositionedImage image = new PositionedImage("src/wall.png", x, y);
-                    image.draw(graphics);
-                    x += 72;
-                }
-            }
-
-            x = 72;
-            y = 72 * 5;
-            for (int i = 4; i < 6; i++) {
-                for (int j = 1; j < 2; j++) {
-                    PositionedImage image = new PositionedImage("src/wall.png", x, y);
-                    image.draw(graphics);
-                    y += 72;
-                }
-            }
-
-            x = 72 * 3;
-            y = 72 * 5;
-            for (int i = 4; i < 6; i++) {
-                for (int j = 3; j < 4 ; j++) {
-                    PositionedImage image = new PositionedImage("src/wall.png", x, y);
-                    image.draw(graphics);
-                    y += 72;
-                }
-            }
-
-            x = 72 * 5;
-            y = 72 * 9;
-            for (int i = 9; i < 10; i++) {
-                for (int j = 5; j < 7; j++) {
-                    PositionedImage image = new PositionedImage("src/wall.png", x, y);
-                    image.draw(graphics);
-                    x += 72;
-                }
-            }
-
-            x = 72;
-            y = 72 * 8;
-            for (int i = 8; i < 9; i++) {
-                for (int j = 1; j < 4; j++) {
-                    PositionedImage image = new PositionedImage("src/wall.png", x, y);
-                    image.draw(graphics);
-                    x += 72;
-                }
-            }
-
-            x = 72 * 3;
-            y = 72 * 9;
-            for (int i = 9; i < 11; i++) {
-                for (int j = 3; j < 4; j++) {
-                    PositionedImage image = new PositionedImage("src/wall.png", x, y);
-                    image.draw(graphics);
-                    y += 72;
-                }
-            }
-
-            // .... creating sinlge ones
-            PositionedImage image = new PositionedImage("src/wall.png", 72, 72 * 10);
-            image.draw(graphics);
-
-            image = new PositionedImage("src/wall.png", 72 * 5 , 72 * 10);
-            image.draw(graphics);
-
-        }
 
             // To be a KeyListener the class needs to have these 3 methods in it
             @Override
@@ -197,11 +89,18 @@ import java.awt.event.KeyListener;
             public void keyReleased (KeyEvent e){
                 // When the up or down keys hit, we change the position of our box
                 if (e.getKeyCode() == KeyEvent.VK_UP) {
-                    testBoxY -= 100;
+                    testBoxY -= 72;
+                    direction = "up";
                 } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-                    testBoxY += 100;
+                    testBoxY += 72;
+                    direction = "down";
+                } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+                    testBoxX -= 72;
+                    direction = "left";
+                } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+                     testBoxX += 72;
+                     direction = "right";
                 }
-                // and redraw to have a new picture with the new coordinates
                 repaint();
             }
         }
