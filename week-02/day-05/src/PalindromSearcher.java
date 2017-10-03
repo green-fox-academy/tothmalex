@@ -8,7 +8,7 @@ input	output
 
 import java.util.ArrayList;
 
-public class PalindromeSearch {
+public class PalindromSearcher {
     public static void main(String[] args) {
 
         System.out.println(searchPalindrome("dog goat dad duck doodle never"));

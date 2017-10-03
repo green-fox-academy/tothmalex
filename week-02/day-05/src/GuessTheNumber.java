@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Scanner;
 
-public class GuessMyNumber {
+public class GuessTheNumber {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -19,7 +19,7 @@ public class GuessMyNumber {
             guess = scanner.nextInt();
             lives--;
             if (lives == 0) {
-                System.out.println("No more lives left! Sorry, you lost, you NOOB!");
+                System.out.println("No more lives left! Sorry, you lost!");
                 break;
             }
             if (guess == random) {
