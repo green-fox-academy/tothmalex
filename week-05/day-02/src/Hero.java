@@ -16,3 +16,5 @@ public class Hero extends Character {
         this.y = 0;
     }
 }
+
+// try catch
