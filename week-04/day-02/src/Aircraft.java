@@ -35,11 +35,11 @@ public class Aircraft {
     }
 
     public static void main(String[] args) {
-        Aircraft repcsi = new F16();
+        Aircraft plane = new F16();
 
-        repcsi.refill(300);
-        System.out.println(repcsi.getStatus());
-        repcsi.fight();
-        System.out.println(repcsi.getStatus());
+        plane.refill(300);
+        System.out.println(plane.getStatus());
+        plane.fight();
+        System.out.println(plane.getStatus());
     }
 }
