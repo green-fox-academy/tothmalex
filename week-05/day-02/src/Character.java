@@ -1,8 +1,10 @@
-import java.awt.image.BufferedImage;
 
-public class Character {  // extends positioned..?
+public class Character extends PositionedImage {
 
-    String filename;
-    int x;
-    int y;
+    public Character() {
+
+        super("src/hero-down.png", 0, 0);
+    }
+
 }
+

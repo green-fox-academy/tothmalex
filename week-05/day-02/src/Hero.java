@@ -1,20 +1,19 @@
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
+
 public class Hero extends Character {
 
-    String filename;
-    int x;
-    int y;
-
-    public void setFilename(String filename) {
-        this.filename = "src/hero-down";
+    public Hero() {
+        super();
     }
 
-    public void setX(int x) {
-        this.x = 0;
-    }
+    public void setDirection(String direction) {
 
-    public void setY(int y) {
-        this.y = 0;
+        try {
+            image = ImageIO.read(new File("src/hero-" + direction + ".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
-
-// try catch
