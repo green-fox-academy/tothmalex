@@ -9,10 +9,20 @@ import java.io.IOException;
         BufferedImage image;
         int posX, posY;
 
+        public PositionedImage(String filename) {
+
+            try {
+                image = ImageIO.read(new File(filename));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
         public PositionedImage(String filename, int posX, int posY) {
 
             this.posX = posX;
             this.posY = posY;
+
             try {
                 image = ImageIO.read(new File(filename));
             } catch (IOException e) {
@@ -22,7 +32,7 @@ import java.io.IOException;
 
         public void draw(Graphics graphics) {
             if (image != null) {
-                graphics.drawImage(image, posX, posY, null);
+                graphics.drawImage(image, posX * 72, posY * 72, null);
             }
         }
     }

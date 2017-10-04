@@ -1,10 +1,19 @@
 
 public class Character extends PositionedImage {
 
-    public Character() {
+    public Character(String filename) {
 
-        super("src/hero-down.png", 0, 0);
+        super(filename);
     }
 
+    public Character(String filename, int posX, int posY) {
+
+        super(filename, posX, posY);
+    }
+
+    public void setCharPos() {
+        super.posX = ((int) (Math.random() * 10));
+        super.posY = ((int) (Math.random() * 11));
+    }
 }
 
