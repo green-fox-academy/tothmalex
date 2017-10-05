@@ -36,9 +36,9 @@ public class Board extends JComponent implements KeyListener {
             for (int i = 0; i < 3; i++) {
                 enemies.add(new Skeleton());
             }
-            for (int i = 1; i < enemies.size(); i++) {
+            for (int i = 0; i < enemies.size(); i++) {
                 while (isItaWall(enemies.get(i).posX, enemies.get(i).posY)) {
-                    enemies.get(i).setCharPos();
+                    enemies.get(i).setPos();
                 }
             }
         }

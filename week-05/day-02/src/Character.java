@@ -11,9 +11,9 @@ public class Character extends PositionedImage {
         super(filename, posX, posY);
     }
 
-    public void setCharPos() {
-        super.posX = ((int) (Math.random() * 10));
-        super.posY = ((int) (Math.random() * 11));
+    public void setPos() {
+        posX = ((int) (Math.random() * 10));
+        posY = ((int) (Math.random() * 11));
     }
 }
 

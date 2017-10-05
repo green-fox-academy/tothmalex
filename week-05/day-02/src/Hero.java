@@ -7,8 +7,8 @@ public class Hero extends Character {
     public Hero(int posX, int posY) {
 
         super("src/hero-down.png");
-        super.posX = posX;
-        super.posY = posY;
+        this.posX = posX;
+        this.posY = posY;
     }
 
     public void setDirection(String direction) {
