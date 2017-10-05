@@ -70,6 +70,7 @@ public class Board extends JComponent implements KeyListener {
                 image.draw(graphics);
             }
 
+
             public void drawingWall (Graphics graphics, String filename, int x, int y) {
                 PositionedImage image = new PositionedImage(filename, x, y);
                 image.draw(graphics);
