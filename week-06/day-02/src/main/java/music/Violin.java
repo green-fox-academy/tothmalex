@@ -1,10 +1,10 @@
-package music;
+package main.java.music;
 
 public class Violin extends StringedInstrument {
 
     public Violin() {
         super(4);
-        this.name = "music.Violin";
+        this.name = "Violin";
     }
 
     public Violin (int num) {
@@ -18,7 +18,7 @@ public class Violin extends StringedInstrument {
     }
 
     @Override
-    void play() {
+    public void play() {
         System.out.println(name + ", a " + numberOfStrings + "-stringed instrument that " + sound());
     }
 }

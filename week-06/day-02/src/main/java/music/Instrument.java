@@ -1,4 +1,4 @@
-package music;
+package main.java.music;
 
 public abstract class Instrument {
 
@@ -7,5 +7,5 @@ public abstract class Instrument {
     public Instrument() {
     }
 
-    abstract void play();
+    abstract public void play();
 }

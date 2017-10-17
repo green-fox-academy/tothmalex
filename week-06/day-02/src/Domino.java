@@ -2,12 +2,18 @@
 import java.util.Collections;
 import java.util.List;
 
-public class Domino implements Comparable {
+public class Domino implements Comparable implements Printable {
 
     @Override
     public int compareTo(Object o) {
         return 0;
     }
+
+    protected void printAllFields() {
+
+        System.out.println();
+    }
+
 
     public static void main(String[] args) {
 
@@ -20,8 +26,10 @@ public class Domino implements Comparable {
             dominoes.add(new Domino(7, 1));
 
             Collections.sort(dominoes);
-            System.out.println(dominoes);
 
+            for(Domino d : dominoes) {
+            d.printAllFields();
+}
     }
 }*/
 

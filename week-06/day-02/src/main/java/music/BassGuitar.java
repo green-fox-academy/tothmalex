@@ -1,4 +1,4 @@
-package music;
+package main.java.music;
 
 public class BassGuitar extends StringedInstrument {
 
@@ -18,7 +18,7 @@ public class BassGuitar extends StringedInstrument {
     }
 
     @Override
-    void play() {
+    public void play() {
         System.out.println(name + ", a " + numberOfStrings + "-stringed instrument that " + sound());
     }
 }
