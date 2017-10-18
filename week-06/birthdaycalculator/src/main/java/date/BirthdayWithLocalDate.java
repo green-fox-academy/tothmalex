@@ -1,6 +1,7 @@
 package date;
 
 import java.time.LocalDate;
+import java.time.Year;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
@@ -25,8 +26,11 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
     @Override
     public boolean isAnniversaryToday(LocalDate date) {
         // TODO - return with true if today is the same month+day as date
-        if (date.toString() == LocalDate.now().toString());
-        return true;
+        if (date.toString() == LocalDate.now().toString()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
