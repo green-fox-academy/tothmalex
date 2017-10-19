@@ -1,4 +1,9 @@
-package PACKAGE_NAME;
+public class Lollipop extends Dessert {
 
-public class Lollipop {
+    // String taste;
+
+    public Lollipop() {
+        super(10, 5);
+        // taste = "tasty";
+    }
 }
