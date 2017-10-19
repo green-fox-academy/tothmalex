@@ -1,36 +1,32 @@
-/*import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+public class Domino implements Comparable<Domino>, Printable {
+    private final int[] values;
 
-public class Domino implements Comparable implements Printable {
+    public Domino(int valueA, int valueB) {
+        this.values = new int[]{valueA, valueB};
+    }
+
+    public int[] getValues() {
+        return values;
+    }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public String toString() {
+        return "[" + values[0] + ", " + values[1] + "]";
     }
 
-    protected void printAllFields() {
-
-        System.out.println();
+    @Override
+    public int compareTo(Domino d) {
+        int compareValue = d.values[0];
+        int compareValue2 = d.values[1];
+        if (this.values[0] - compareValue != 0) {
+            return this.values[0] - compareValue;
+        } else {
+            return this.values[1] - compareValue2;
+        }
     }
 
-
-    public static void main(String[] args) {
-
-            List<Domino> dominoes = new ArrayList<>();
-            dominoes.add(new Domino(5, 2));
-            dominoes.add(new Domino(4, 6));
-            dominoes.add(new Domino(1, 5));
-            dominoes.add(new Domino(6, 7));
-            dominoes.add(new Domino(2, 4));
-            dominoes.add(new Domino(7, 1));
-
-            Collections.sort(dominoes);
-
-            for(Domino d : dominoes) {
-            d.printAllFields();
+    @Override
+    public void printAllFields() {
+        System.out.println(this.values[0] + " " + this.values[1]);
+    }
 }
-    }
-}*/
-
-// Should result in: [[1,5], [2,4], [4,6], [5,2], [6,7], [7,1]]

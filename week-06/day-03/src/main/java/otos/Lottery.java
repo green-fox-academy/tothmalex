@@ -1,27 +1,27 @@
-import joptsimple.OptionParser;
-import joptsimple.OptionSet;
+package otos;
 
-import static org.junit.Assert.*;
 
-        public class Lottery {
 
-            public void allowsDifferentFormsOfPairingArgumentWithOption() {
-                OptionParser parser = new OptionParser( "a:b:c::" );
+public class Lottery {
 
-                OptionSet options = parser.parse( "-a", "foo", "-bbar", "-c=baz" );
+    public static void main(String[] args) {
 
-                assertTrue( options.has( "a" ) );
-                assertTrue( options.hasArgument( "a" ) );
-                assertEquals( "foo", options.valueOf( "a" ) );
+        LotteryFilter lotto = new LotteryFilter();
 
-                assertTrue( options.has( "b" ) );
-                assertTrue( options.hasArgument( "b" ) );
-                assertEquals( "bar", options.valueOf( "b" ) );
+        OptionParser parser = new OptionParser();
+        parser.accepts("y").withRequiredArg();
+        ;
+        parser.accepts("f").withRequiredArg();
+        parser.accepts("o").withRequiredArg();
 
-                assertTrue( options.has( "c" ) );
-                assertTrue( options.hasArgument( "c" ) );
-                assertEquals( "baz", options.valueOf( "c" ) );
-            }
+        OptionSet options = parser.parse(args);
+
+        if (options.has("a")) {
+            System.out.println("`-a` was given with the argument " + options.valueOf("a"));
+        }
+
+        if (options.has("l")) {
+            System.out.println("`-l` was given with the no additional information.");
         }
     }
 }
