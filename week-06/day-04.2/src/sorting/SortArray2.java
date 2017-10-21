@@ -5,8 +5,9 @@ import java.util.Collections;
 
 public class SortArray2 {
 
+    static Integer[] list = {14,25,4,35,47,3,0};
+
     public static void main(String[] args) {
-        Integer[] list = {14,25,4,35,47,3,0};
         sorting(list);
     }
 

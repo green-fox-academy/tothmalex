@@ -4,7 +4,7 @@ public class SortArray {
 
     public static void main(String[] args) {
 
-        Integer [] myArray = {1,12,7,3,63,9,9,13,45,46};
+        Integer [] myArray = {1,5,12,7,3,63,9,9,13,45,46};
 
         try {
             sort(myArray);
@@ -16,17 +16,17 @@ public class SortArray {
         }
     }
 
-    public static <T extends Number> T[] sort(T[] list) throws Exception {
+    public static <T extends Number> void sort(T[] list) throws Exception {
         T temp;
+
         for (int i = 0; i < list.length; i++) {
-            for (int j = 0; j < list.length - i - 1; j++) {
-                if (list[j].intValue() < list[j + 1].intValue()) {
-                    temp = list[j];
-                    list[j] = list[j + 1];
-                    list[j + 1] = temp;
+            for (int j = i + 1; j < list.length; j++) {
+                if (list[i].intValue() < list[j].intValue()) {
+                    temp = list[i];
+                    list[i] = list[j];
+                    list[j] = temp;
                 }
             }
         }
-        return list;
     }
 }
