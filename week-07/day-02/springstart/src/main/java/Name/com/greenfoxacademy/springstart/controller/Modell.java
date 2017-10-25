@@ -1,6 +1,6 @@
 package Name.com.greenfoxacademy.springstart.controller;
 
-public class Model {
+public class Modell {
 
     String input1;
     String input2;

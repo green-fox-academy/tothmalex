@@ -1,3 +1,4 @@
+/*
 package Name.com.greenfoxacademy.springstart;
 
 import org.junit.Test;
@@ -12,5 +13,5 @@ public class SpringstartApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-
 }
+*/
