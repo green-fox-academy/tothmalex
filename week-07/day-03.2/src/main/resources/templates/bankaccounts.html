@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:background-color="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+
+<h1  style="align: center"> Bank Accounts of Simba Bank </h1>
+
+<table width="500" border="1" >
+    <th>N.o</th>
+    <th>Name</th>
+    <th>Balance</th>
+    <th>Animal Type</th>
+    <th>State</th>
+
+    <tr th:each ="accounts:${accounts}" th:style= "${accounts.isKing()}? 'color: red'"  >
+
+        <td style="text-align: center; font-weight: bold; border: groove" th:text="${accountsStat.count}"></td>
+        <td style="align-content: center; font-weight: bold; background-color: lightyellow; border: groove" th:text="${accounts.name}"></td>
+        <td style="align-content: center; font-weight: bold; background-color: lightyellow; border: groove" th:text="${#numbers.formatDecimal(accounts.balance, 0, 2) +' Zebra'}"></td>
+        <td style="align-content: center; font-weight: bold; background-color: lightyellow; border: groove" th:text="${accounts.animalType}"></td>
+        <td style="background-color: lightyellow; border: groove; font-weight: bold;" th:switch="${accounts.isGood()}">
+            <span th:case="true" th:text= "'Good One'"/>
+            <span th:case="false" th:text= "'Bad Guy'"/>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

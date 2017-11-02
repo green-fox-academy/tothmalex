@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+<table style="table-align:center; border: solid" >
+    <tr>
+        <th> N.o</th>
+        <th> Name</th>
+        <th>Balance</th>
+        <th>Animal Type</th>
+        <th>Valuation</th>
+    </tr>
+
+    <tr th:style="${accounts.isKing()} == true ? 'color:red'" th:each="accounts : ${accounts}">
+
+        <th  th:text="${accountsStat.count}"></th>
+        <td  style="text-align:center; border: solid"  th:text="${accounts.name}"></td>
+        <td  style="text-align:center" th:text="${accounts.balance}"></td>
+        <td  style="text-align:center" th:text="${accounts.animalType}"></td>
+        <td  style="text-align:center" th:text="${accounts.state}"></td>
+
+    </tr>
+</table>
+</body>
+</html>
