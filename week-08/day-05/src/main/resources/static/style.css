@@ -1,0 +1,9 @@
+th, td {
+    padding: 5px;
+    text-align: left;
+    border: 1px solid grey;
+}
+
+h1, th {
+    text-transform: uppercase;
+}

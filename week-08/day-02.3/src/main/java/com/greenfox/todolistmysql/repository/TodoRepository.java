@@ -1,4 +1,7 @@
 package com.greenfox.todolistmysql.repository;
 
-public interface TodoRepository {
+import com.greenfox.todolistmysql.model.Todo;
+import org.springframework.data.repository.CrudRepository;
+
+public interface TodoRepository extends CrudRepository<Todo, Long> {
 }

@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta charset="UTF-8"/>
+    <title>ToDo CRUD App</title>
 </head>
 <body>
-$END$
+<h1>Todos for today:</h1>
+<table>
+    <tbody>
+    <tr>
+        <th>ID</th>
+        <th>ACTION</th>
+        <th>URGENT</th>
+        <th>DONE</th>
+    </tr>
+    <tr th:each="todo: ${todos}">
+        <td th:text="${todo.id}"></td>
+        <td th:text="${todo.title}"></td>
+        <td th:text="${todo.isUrgent}"></td>
+        <td th:text="${todo.isDone}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

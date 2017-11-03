@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="UTF-8"/>
+    <title>Posts</title>
 </head>
 <body>
-$END$
+
+<p>
+<form th:action="@{'/reddit/create'}" >
+    <button type="submit"> Add new post </button>
+</form>
+</p>
+<h1>Posts</h1>
+<table>
+    <tr>
+        <th>SCORE</th>
+        <th>Actions</th>
+        <th>Content</th>
+    </tr>
+    <tr th:each="reddit : ${reddits}" th:object="${reddit}">
+        <td th:text="*{score}"/>
+        <td><a th:href="@{'/reddit/{id}/upvote'(id=${reddit.id})}">+</a>
+        <a th:href="@{'/reddit/{id}/downvote'(id=${reddit.id})}">-</a></td>
+        <td th:text="*{content}"/>
+        <!--<td th:text="*{date}"/>-->
+    </tr>
+</table>
 </body>
 </html>

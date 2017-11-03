@@ -1,4 +1,8 @@
 package com.greenfox.reddit.repository;
 
-public interface RedditRepository {
+import com.greenfox.reddit.model.Reddit;
+import org.springframework.data.repository.CrudRepository;
+
+public interface RedditRepository extends CrudRepository<Reddit, Long> {
+
 }
