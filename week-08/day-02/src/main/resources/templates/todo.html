@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta charset="UTF-8"/>
+    <title>Todos for today: </title>
 </head>
 <body>
-$END$
+<div>
+    <ul>
+        <li th:text=" ${title}"></li>
+        <li th:text=" Todo A"></li>
+        <li th:text=" Todo B"></li>
+    </ul>
+</div>
 </body>
 </html>

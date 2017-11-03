@@ -2,10 +2,27 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
-    <title>ToDos</title>
+    <title>ToDo CRUD App</title>
 </head>
 <body>
-<h1>To Do List</h1>
-<p th:text=" ${id} + ' ' + ${title} + ${isUrgent} + ${isDone}"/>
+<h1>Todos for today</h1>
+<p th:text=" ${title}"/>
+<div>
+    <ul>
+        <li th:text=" ${title}"></li>
+    </ul>
+</div>
+<table>
+    <tbody>
+        <tr>
+            <th>Username</th>
+            <th>Message</th>
+        </tr>
+        <tr th:each="todo: ${todos}">
+            <td th:text="${todo.id}"></td>
+            <td th:text="${todo.title}"></td>
+        </tr>
+    </tbody>
+</table>
 </body>
 </html>

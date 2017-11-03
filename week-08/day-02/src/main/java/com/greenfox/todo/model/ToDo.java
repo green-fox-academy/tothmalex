@@ -1,17 +1,26 @@
-package com.greenfox.todo;
+package com.greenfox.todo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class ToDo {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
     String title;
-    boolean isUrgent = false;
-    boolean isDone = false;
+    boolean isUrgent;
+    boolean isDone;
 
-    public ToDo(int id, String title, boolean isUrgent, boolean isDone) {
-        this.id = id;
+    public ToDo () {}
+
+    public ToDo(String title) {
         this.title = title;
-        this.isUrgent = isUrgent;
-        this.isDone = isDone;
+        this.isUrgent = false;
+        this.isDone = false;
     }
 
     public int getId() {
