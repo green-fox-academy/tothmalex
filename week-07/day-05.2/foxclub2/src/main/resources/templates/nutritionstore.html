@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Welcome to the Fox Club!</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
 </head>
 <body>
-$END$
+
+<ul>
+    <li><a th:href="@{/information.html}">Information</a></li>
+</ul>
+
+<p>Food</p>
+
+<form th:action="@{/nutri}" method="post">
+    <select name="food">
+        <option value="falafel">Falafel</option>
+        <option value="fig">Figs</option>
+        <option value="tortilla">Tortilla</option>
+    </select>
+
+    <p>Drink</p>
+    <select name="drink">
+        <option value="coke">Coke</option>
+        <option value="coke light">Coke Light</option>
+        <option value="black tea">Black Tea</option>
+    </select>
+    <input type="submit" value="Change"/>
+</form>
+
 </body>
 </html>

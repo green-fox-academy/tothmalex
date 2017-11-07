@@ -1,4 +1,26 @@
 package greenfox.foxclub.model;
 
 public class Trick {
+    String name;
+
+    public Trick(){
+        this.name = "";
+    }
+
+    public Trick(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }
