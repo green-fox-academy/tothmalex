@@ -8,4 +8,9 @@ public class Doubled {
         result = input *2;
         return result;
     }
+
+    public Doubled( int received, int result ) {
+        this.received = received;
+        this.result = result;
+    }
 }
