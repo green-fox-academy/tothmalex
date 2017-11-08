@@ -45,11 +45,29 @@ public class FrontendApplicationTests {
 	}
 
 	@Test
-	public void testUnsuccessfulSignUp() throws Exception {
-		mockMvc.perform(get("/doublingtrial?input=5"))
+	public void testDoubling() throws Exception {
+		mockMvc.perform(get("/doubling?input=5"))
 				.andExpect(status().isOk())
 				.andExpect(content().contentType(contentType))
 				.andExpect(jsonPath("$.result", is(10)))
 				.andExpect(jsonPath("$.received", is(5)));
 	}
+
+	@Test
+	public void testGreeter() throws Exception {
+		mockMvc.perform(get("/greeter?name=Alex&title=student"))
+				.andExpect(status().isOk())
+				.andExpect(content().contentType(contentType))
+				.andExpect(jsonPath("$.welcome_message", is("Oh, hi there Alex, my dear student!")));
+	}
+
+	@Test
+	public void testAppending() throws Exception {
+		mockMvc.perform(get("/appenda/kuty"))
+				.andExpect(status().isOk())
+				.andExpect(content().contentType(contentType))
+				.andExpect(jsonPath("$.appended", is("kutya")));
+	}
+
+
 }
