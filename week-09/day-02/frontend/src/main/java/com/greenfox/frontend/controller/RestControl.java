@@ -1,9 +1,7 @@
 package com.greenfox.frontend.controller;
 
 import com.greenfox.frontend.error.ErrorMessage;
-import com.greenfox.frontend.model.Appender;
-import com.greenfox.frontend.model.Doubled;
-import com.greenfox.frontend.model.Greeter;
+import com.greenfox.frontend.model.*;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -14,7 +12,7 @@ public class RestControl {
     public Object doubler( @RequestParam(required = false) Integer input ) {
 
         if (input == null) {
-            return new ErrorMessage("Please provide a number!");
+            return new ErrorMessage("Please provide an input!");
         } else {
             Doubled doubled = new Doubled(input, input * 2);
             return doubled;
@@ -22,14 +20,18 @@ public class RestControl {
     }
 
     @GetMapping("/greeter")
-    public Object greeter( @RequestParam(required = false) String name, @RequestParam String title) {
+    public Object greeter( @RequestParam(required = false) String name, @RequestParam (required = false) String title) {
 
-        if (name == null) {
+        if (name == null && title == null) {
+            return new ErrorMessage("Please provide a name and a title!");
+        } else if (title == null) {
+            return new ErrorMessage("Please provide a title!");
+        } else if (name == null){
             return new ErrorMessage("Please provide a name!");
-        } else {
+        } else if (name != null && name != null){
             Greeter g = new Greeter(name, title);
             return g;
-        }
+        } return null;
     }
 
     @GetMapping("/appenda/{appendable}")
@@ -40,6 +42,17 @@ public class RestControl {
         } else {
             Appender a = new Appender(appendable);
             return a;
+        }
+    }
+
+    @RequestMapping(value ="/dountil/{what}", method= RequestMethod.POST)
+    public Object dountil ( @PathVariable("what") String what, @RequestBody Until until){
+
+        if (until.getUntil() != 0) {
+            DoUntil dountil = new DoUntil(until.getUntil(), what);
+            return dountil;
+        } else {
+            return new ErrorMessage("Please provide a number!");
         }
     }
 }

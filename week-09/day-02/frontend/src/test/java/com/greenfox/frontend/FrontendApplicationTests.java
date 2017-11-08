@@ -62,6 +62,22 @@ public class FrontendApplicationTests {
 	}
 
 	@Test
+	public void greetingTest() throws Exception {
+		mockMvc.perform(get("/greeter?name=Alex"))
+				.andExpect(status().isOk())
+				.andExpect(content().contentType(contentType))
+				.andExpect(jsonPath("$.error", is("Please provide a title!")));
+	}
+
+	@Test
+	public void greetingTestNoName() throws Exception {
+		mockMvc.perform(get("/greeter?title=name"))
+				.andExpect(status().isOk())
+				.andExpect(content().contentType(contentType))
+				.andExpect(jsonPath("$.error", is("Please provide a name!")));
+	}
+
+	@Test
 	public void testAppending() throws Exception {
 		mockMvc.perform(get("/appenda/kuty"))
 				.andExpect(status().isOk())
@@ -69,5 +85,14 @@ public class FrontendApplicationTests {
 				.andExpect(jsonPath("$.appended", is("kutya")));
 	}
 
+	@Test
+	public void testDoUntil() throws Exception {
+		mockMvc.perform(post("/dountil/sum")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content("{\"until\": 5}"))
 
+				.andExpect(status().isOk())
+				.andExpect(content().contentType(contentType))
+				.andExpect(jsonPath("$.result", is(15)));
+	}
 }
