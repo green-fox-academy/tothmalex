@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Login to Jani's Reddit</title>
+</head>
+<body>
+
+<a href="/register">Create New User</a>
+
+<h1>Login</h1>
+<form th:action="@{/login}" th:object="${user}" method="post">
+    <label>Please enter username:</label>
+    <input type="text" th:field="*{name}"/><br/>
+    <label>Please enter password:</label>
+    <input type="password" th:field="*{password}"/><br/>
+    <input type="submit" value="Login"/>
+</form>
+
+</body>
+</html>
